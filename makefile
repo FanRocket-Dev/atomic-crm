@@ -35,7 +35,7 @@ build-lib: ## build the library
 	npm run build-lib
 
 prod-start: build supabase-deploy
-	open http://127.0.0.1:3000 && npx serve -l tcp://127.0.0.1:3000 dist
+	npx serve dist -l 3000 & sleep 2 && xdg-open http://127.0.0.1:3000
 
 prod-deploy: build supabase-deploy
 	npm run ghpages:deploy
